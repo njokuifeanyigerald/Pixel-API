@@ -15,6 +15,7 @@ import sys
 
 class ImageModel(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    # email_of_user = models.EmailField(max_length=300)
     title = models.CharField(max_length=300)
     image = models.ImageField(upload_to='pics')
     image_200px = models.ImageField(upload_to='pics', blank=True, null=True)
