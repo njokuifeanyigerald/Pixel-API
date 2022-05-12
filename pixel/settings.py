@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-#1r#_$xu89w%_mnoge0g*yz*r$a0n*)a0j2fu)hjn$#3oxodk*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -192,16 +192,18 @@ SWAGGER_SETTINGS = {
 # rest_framework
 REST_FRAMEWORK = {
     'NON_FIELD_ERRORS_KEY': 'error',
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ),
+
+# UNCOMMENT IT IF U WANT TO USE ACCESS TOKEN FOR AUTHENTICATION
+    # 'DEFAULT_AUTHENTICATION_CLASSES': (
+    #     'rest_framework_simplejwt.authentication.JWTAuthentication',
+    # ),
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated'
     ]
 }
 
 
-# ssimple jwt
+# simple jwt
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': datetime.timedelta(minutes=20),
     'REFRESH_TOKEN_LIFETIME':  datetime.timedelta(days=1),

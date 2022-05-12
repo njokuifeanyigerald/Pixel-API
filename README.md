@@ -32,7 +32,7 @@ pipenv install  drf-yasg
 ```
 
 ## Description of project
-The project about building a kinda Pixel or Image  API that allows any user to upload an image in PNG or JPG format.
+The project about building a kinda Pixel or Image  API that allows any user to upload an image in Only JPG format.
 
 **In The Authentication Section**
 - In the models.py, I added a plan whereby a user can choose different plan ranging from `"Basic"`, `"Premium"` or `"Enterprise"`
@@ -58,6 +58,20 @@ The project about building a kinda Pixel or Image  API that allows any user to u
 -  I created a route for any one(unathenticated user) that visits the API to view images.
     Route address  - `http://127.0.0.1:8000/image/all/`
     
-   
+
+**In setting.py File**
+ incase you decide to use access token for authentication
+ pls uncomment this particular line in settings.py, `Line 200`.
+
+
+REST_FRAMEWORK = {
+
+*UNCOMMENT IT IF U WANT TO USE ACCESS TOKEN FOR AUTHENTICATION*
+    # 'DEFAULT_AUTHENTICATION_CLASSES': (
+    #     'rest_framework_simplejwt.authentication.JWTAuthentication',
+    # ),
+
+    
+}
 
 

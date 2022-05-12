@@ -25,7 +25,7 @@ class ImageSerializer(serializers.ModelSerializer):
     
     # GETTING THE URL OF THE IMAGES FOR NORMAL SIZE
     def get_image_url(self, obj):
-       return  "http://127.0.0.1:8000" + obj.image.url
+       return  settings.HOST_URL + obj.image.url
 
     # GETTING THE URL OF THE IMAGES FOR 200PX SIZE
     def get_image_200px_url(self, obj):
@@ -61,8 +61,8 @@ class Image200pxSerializer(serializers.ModelSerializer):
     def get_image_200px_url(self, obj):
         if obj.image_200px == "":
             return 'no url link'
-        else:
-            return settings.HOST_URL + obj.image_200px.url
+        
+        return settings.HOST_URL + obj.image_200px.url
 
     
 

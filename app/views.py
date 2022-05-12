@@ -18,7 +18,7 @@ class ImageAPI(APIView):
         if user.is_authenticated:
             if user.plan == 'Basic':
                 imagedata=  ImageModel.objects.all()
-                serializer = self.serializer_200_class(imagedata, many=True)
+                serializer = Image200pxSerializer(imagedata, many=True)
 
                 
                 return response.Response({'image':serializer.data}, status=status.HTTP_200_OK)
@@ -71,17 +71,17 @@ class ImageAPI(APIView):
                 }
                 return response.Response(context,status.HTTP_201_CREATED)
 
-            elif  user.plan == 'Basic':
-                imageData =  ImageModel.objects.create(
-                    user= user,
-                    title =title,
-                    image = image
-                )
-                serializer = self.serializer_200_class(imageData)
-                context  = {
-                    'serializer':  serializer.data
-                }
-                return response.Response(context,status.HTTP_201_CREATED)
+        
+            imageData =  ImageModel.objects.create(
+                user= user,
+                title =title,
+                image = image
+            )
+            serializer = Image200pxSerializer(imageData)
+            context  = {
+                'serializer':  serializer.data
+            }
+            return response.Response(context,status.HTTP_201_CREATED)
         else:
             return response.Response({'error': 'pls authenticate user'}, status.HTTP_401_UNAUTHORIZED)
         
