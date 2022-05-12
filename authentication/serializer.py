@@ -13,11 +13,10 @@ from rest_framework.exceptions import AuthenticationFailed
 
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(max_length=170, min_length=8, write_only=True)
-    is_realtor = serializers.BooleanField(default=False) 
     class Meta:
         model = User
         fields = [
-            'username', 'email', 'password', 'is_realtor'
+            'username', 'email', 'password', 'plan'
         ]
     
     def create(self, validated_data):

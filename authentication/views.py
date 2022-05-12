@@ -1,3 +1,4 @@
+from multiprocessing import AuthenticationError
 from rest_framework import generics, permissions, status, response
 from .models import User
 from .serializer import RegisterSerializer, LoginSerializer, LogoutSerializer
@@ -33,8 +34,6 @@ class LoginAPIView(generics.GenericAPIView):
             raise AuthenticationError('Invalid credentials, try again')
         if not user.is_active:
             raise AuthenticationError('Account disabled, contact admin')
-        if not user.email_verified:
-            raise AuthenticationError('Email is not verified')
         if user:
             serializer = self.serializer_class(user)
             # 201 created, because it will create a refresh token and access token
