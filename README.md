@@ -75,3 +75,20 @@ REST_FRAMEWORK = {
 }
 
 
+### FOR DOCKER
+**Run the following lines**
+
+to build the docker app
+```xml
+docker-compose build
+```
+
+to start it
+```xml
+docker-compose up
+```
+
+to shut down the app
+```xml
+docker-compose down
+```
