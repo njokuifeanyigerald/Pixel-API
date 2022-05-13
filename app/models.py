@@ -23,7 +23,6 @@ class ImageModel(models.Model):
         # IF USER PLAN IS BASIC
         if self.user.plan == 'Basic':
             im = Image.open(self.image)
-            print(im.format)
 
             output = BytesIO()
 
