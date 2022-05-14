@@ -176,7 +176,7 @@ CORS_ALLOW_HEADERS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOCAL_HOST_URL = 'http://127.0.0.1:8000/'
-HOST_URL = 'https://hexoceanpixel.herokuapp.com/'
+HOST_URL = 'https://hexoceanpixel.herokuapp.com'
 
 # for drf-yasg settings
 SWAGGER_SETTINGS = {
