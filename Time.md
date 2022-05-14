@@ -13,5 +13,5 @@ On Thursday 12, 2022, tried inputing PNG file and was figuring a way to reduce t
 
 On friday 13, Dockerized the app and then did `try and catch` error handling method inorder to avoid the app crashing when someone forgot to input image or even whenone did input a PNG file, so it will return a 400 Bad Request to the user with a message saying `"Please, fill in the required fields and  image should be in jpeg format only"`
 
-On saturday 14, push it for a live preview on heroku
+On saturday 14, push it for a live preview on heroku.
 

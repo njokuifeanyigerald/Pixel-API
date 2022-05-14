@@ -92,3 +92,7 @@ to shut down the app
 ```xml
 docker-compose down
 ```
+use port `http://127.0.0.1:8001/` for docker
+
+**NOTE**
+I removed all heroku file from requirements.txt, Inorder for docker to work because i was having psycopg2 error regarding of installating psycopg2-binary
