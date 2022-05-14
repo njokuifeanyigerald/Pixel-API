@@ -25,20 +25,20 @@ class ImageSerializer(serializers.ModelSerializer):
     
     # GETTING THE URL OF THE IMAGES FOR NORMAL SIZE
     def get_image_url(self, obj):
-       return  settings.HOST_URL + obj.image.url
+       return  settings.LOCAL_HOST_URL + obj.image.url
 
     # GETTING THE URL OF THE IMAGES FOR 200PX SIZE
     def get_image_200px_url(self, obj):
         if obj.image_200px == "":
             return 'no url link'
         else:
-            return  settings.HOST_URL + obj.image_200px.url
+            return  settings.LOCAL_HOST_URL + obj.image_200px.url
     # GETTING THE URL OF THE IMAGES FOR 400PX SIZE
     def get_image_400px_url(self, obj):
         if obj.image_400px == "":
             return 'no url 400px link for this file'
         else:
-            return  settings.HOST_URL + obj.image_400px.url
+            return  settings.LOCAL_HOST_URL + obj.image_400px.url
 
     
         
@@ -62,7 +62,7 @@ class Image200pxSerializer(serializers.ModelSerializer):
         if obj.image_200px == "":
             return 'no url link'
         
-        return settings.HOST_URL + obj.image_200px.url
+        return settings.LOCAL_HOST_URL + obj.image_200px.url
 
     
 
@@ -81,4 +81,4 @@ class ImageAnyoneSerializer(serializers.ModelSerializer):
 
     # RETURN THE URL FOR IMAGE 
     def get_image_url(self, obj):
-        return  settings.HOST_URL + obj.image.url
+        return  settings.LOCAL_HOST_URL + obj.image.url

@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-#1r#_$xu89w%_mnoge0g*yz*r$a0n*)a0j2fu)hjn$#3oxodk*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*' , 'https://hexoceanpixel.herokuapp.com/']
 
@@ -175,7 +175,7 @@ CORS_ALLOW_HEADERS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOCAL_HOST_URL = 'http://127.0.0.1:8000/'
+LOCAL_HOST_URL = 'http://127.0.0.1:8000'
 HOST_URL = 'https://hexoceanpixel.herokuapp.com'
 
 # for drf-yasg settings
